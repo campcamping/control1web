@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Control1 — A/V Technology</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 120px 8%;
+    }
+
+    /* ---------- HERO ---------- */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      max-width: 900px;
+      margin-top: 25px;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .button-row {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 14px 32px;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 60px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .product.reverse {
+      direction: rtl;
+    }
+
+    .product.reverse > * {
+      direction: ltr;
+    }
+
+    .product h3 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .product p {
+      color: #ccc;
+      font-size: 1.05rem;
+    }
+
+    /* ---------- IMAGE PLACEHOLDERS ---------- */
+    .image-placeholder {
+      width: 100%;
+      height: 320px;
+      border: 1px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 60px 8%;
+      text-align: center;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .product {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 0 8%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="fade">
+    <h1>Control1</h1>
+    <p>
+      Control1 is an A/V Technology company that started as an installation company and evolved into
+      developing A/V equipment, security solutions, and military technology. As the first company
+      to publicly release a product supporting Dolby Atmos on Roblox, we strive to deliver
+      unmatched quality and care.
+    </p>
+
+    <div class="button-row">
+      <a class="btn" href="https://www.discord.gg/znmq9cjNtr" target="_blank">Discord</a>
+      <a class="btn" href="https://www.roblox.com/communities/33114320/Control1#!/about" target="_blank">Roblox Group</a>
+      <a class="btn" href="https://shop.parcelroblox.com/store/6779e36040a90b3e8acd32d5" target="_blank">Store</a>
+    </div>
+  </header>
+
+  <!-- PRODUCT LINEUP -->
+  <section>
+    <h2 class="section-title fade">Our Product Lineup</h2>
+
+    <!-- AVR-2720 -->
+    <div class="product fade">
+      <div>
+        <h3>AVR-2720</h3>
+        <p>
+          The AVR-2720 is a state-of-the-art 7.2 A/V Receiver supporting Dolby Atmos,
+          Dolby Surround, stereo, and mono audio, along with 4K video output.
+          Delivering 95 watts per channel and featuring six HDMI inputs, it is designed
+          for immersive theaters and powerful living room setups.
+        </p>
+      </div>
+      <div class="image-placeholder">AVR-2720 Image Placeholder</div>
+    </div>
+
+    <!-- Server Racks -->
+    <div class="product reverse fade">
+      <div>
+        <h3>Server Racks</h3>
+        <p>
+          Control1 Server Racks are simple, reliable, and essential.
+          Available in small and large variants, they support installations ranging
+          from small businesses to enterprise environments. Each rack includes a shelf
+          for compact amplifiers or receivers.
+        </p>
+      </div>
+      <div class="image-placeholder">Server Rack Image Placeholder</div>
+    </div>
+
+    <!-- ControlOS -->
+    <div class="product fade">
+      <div>
+        <h3>ControlOS 3</h3>
+        <p>
+          ControlOS 3 is currently unreleased. More details coming soon.
+        </p>
+      </div>
+      <div class="image-placeholder">ControlOS 3 Image Placeholder</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Control1. All rights reserved.
+  </footer>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    fades.forEach(fade => observer.observe(fade));
+  </script>
+
+</body>
+</html>
